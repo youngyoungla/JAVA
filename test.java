@@ -37,7 +37,8 @@ public class test {
                 if (s[i] == '-') {
                     flag = false;
                 } else if (s[i] == '+') {
-                } else {
+                }
+                else {
                     return 0;
                 }
             }
@@ -77,7 +78,7 @@ public class test {
         return tmp;
     }
 
-    public void Reverse(char[] str,int begin,int end)
+    public void reverse(char[] str,int begin,int end)
     {
         while(begin<end)
         {
@@ -88,18 +89,27 @@ public class test {
             end--;
         }
     }
-    public String ReverseSentence(String str) {
+    public String reverseSentence(String str) {
 
         char[] s=str.toCharArray();
-        Reverse(s,0,str.length()-1);
         int begin=0;
+        boolean blank=false; //是否有空格
         for(int i=0;i<str.length();i++)
         {
             if(s[i]==' ')
             {
-                Reverse(s,begin,i-1);
+                reverse(s,begin,i-1);
                 begin=i+1;
+                blank=true;
             }
+            if(i==str.length()-1 && blank== true)
+            {
+                reverse(s,begin,i);
+            }
+        }
+        if(blank == true)
+        {
+            reverse(s,0,s.length-1);
         }
         return String.valueOf(s);
     }
@@ -112,7 +122,7 @@ public class test {
         System.out.println(T.replace(str));
 
 
-        System.out.print(T.ReverseSentence("I am a student."));
+        System.out.print(T.reverseSentence("I am a student."));
 
     }
 
