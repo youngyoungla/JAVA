@@ -80,7 +80,7 @@ public class test {
     public static void main(String[] args) {
         test T = new test();
         // T.reserve();
-        System.out.printlnc (T.StrToInt("-5968"));
+        System.out.println(T.StrToInt("-5968"));
         char[] str = ("we are world").toCharArray();
         System.out.print(T.replace(str));
 
