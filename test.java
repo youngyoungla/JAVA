@@ -77,12 +77,42 @@ public class test {
         return tmp;
     }
 
+    public void Reverse(char[] str,int begin,int end)
+    {
+        while(begin<end)
+        {
+            char tmp=str[begin];
+            str[begin]=str[end];
+            str[end]=tmp;
+            begin++;
+            end--;
+        }
+    }
+    public String ReverseSentence(String str) {
+
+        char[] s=str.toCharArray();
+        Reverse(s,0,str.length()-1);
+        int begin=0;
+        for(int i=0;i<str.length();i++)
+        {
+            if(s[i]==' ')
+            {
+                Reverse(s,begin,i-1);
+                begin=i+1;
+            }
+        }
+        return String.valueOf(s);
+    }
+
     public static void main(String[] args) {
         test T = new test();
         // T.reserve();
         System.out.println(T.StrToInt("-5968"));
         char[] str = ("we are world").toCharArray();
-        System.out.print(T.replace(str));
+        System.out.println(T.replace(str));
+
+
+        System.out.print(T.ReverseSentence("I am a student."));
 
     }
 
