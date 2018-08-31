@@ -114,15 +114,24 @@ public class test {
         return String.valueOf(s);
     }
 
+    //左旋n个字符
+    public void left_Reverse(char[] str,int left_num)
+    {
+        reverse(str,0,left_num-1);
+        reverse(str,left_num,str.length-1);
+        reverse(str,0,str.length-1);
+    }
+
     public static void main(String[] args) {
         test T = new test();
         // T.reserve();
         System.out.println(T.StrToInt("-5968"));
         char[] str = ("we are world").toCharArray();
         System.out.println(T.replace(str));
-
-
-        System.out.print(T.reverseSentence("I am a student."));
+        System.out.println(T.reverseSentence("I am a student."));
+        char[] s=("hello").toCharArray();
+        T.left_Reverse(s,2);
+        System.out.println(s);
 
     }
 
